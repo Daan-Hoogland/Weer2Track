@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name" translatable="false">Weer2Track</string>
+    <string name="image_weather">Image depicting weather state</string>
+    <string name="title_currentweather">Huidige weersituatie</string>
+    <string name="label_mintemp">Min: %1$s°C</string>
+    <string name="label_maxtemp">Max: %1$s°C</string>
+    <string name="label_precipitation">Kans op regen: %1$d%%</string>
+    <string name="label_feels_like_temp">Voelt als %1$d°C</string>
+    <string name="label_current_temp">%1$d°C</string>
+    <string name="label_old_data">Geen internet connectie</string>
+    <string name="label_no_forecast_data">Geen offline data beschikbaar</string>
+    <string name="title_forecast">Weekvooruitzicht</string>
+    <string name="label_last_modified">Laatste offline data van %1$s</string>
+</resources>
