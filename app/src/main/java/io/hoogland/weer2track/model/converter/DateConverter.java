@@ -6,9 +6,6 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
-
-import io.hoogland.weer2track.util.DateUtils;
 
 /**
  * Converter to allow {@link LocalDate} and {@link LocalDateTime} to be used in models
@@ -26,7 +23,7 @@ public class DateConverter {
      */
     @TypeConverter
     public static LocalDateTime epochToLocalDateTime(Long epoch) {
-        return epoch == null ? null : LocalDateTime.ofInstant(Instant.ofEpochSecond(epoch), ZoneId.systemDefault());
+        return epoch == null ? null : LocalDateTime.ofInstant(Instant.ofEpochSecond(epoch), ZoneId.of("Europe/Amsterdam"));
     }
 
     /**
@@ -37,7 +34,8 @@ public class DateConverter {
      */
     @TypeConverter
     public static Long localDateTimeToEpoch(LocalDateTime dateTime) {
-        return dateTime == null ? null : dateTime.toEpochSecond(ZoneOffset.UTC);
+        return dateTime == null ? null : dateTime.toEpochSecond(ZoneId.of("Europe/Amsterdam")
+                .getRules().getOffset(dateTime));
     }
 
     /**
